@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Store_JS_FlipView</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+    <style type="text/css">
+        #trgFilpView
+        {
+            width: 100%;
+            height:100%;
+            border: solid 1px black;    
+             background-color:coral;
+        }
+    </style>
+
+    <!-- Store_JS_FlipView references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/default.js"></script>
+    <script src="dataInformation.js"></script>
+   
+</head>
+<body>
+    <!--Define the Template Here-->
+    <div style="width:100%;height:100%" id="DataTemplate" data-win-control="WinJS.Binding.Template">
+        <div>
+            <img src="#"  data-win-bind="src : image; alt: name" style="width:100%;height:100%"/>
+            <div>
+                <h3 data-win-bind="innerText : name" ></h3>
+                <h4 data-win-bind="innerText : description" ></h4>
+            </div>
+        </div>
+    </div>
+    <!--Ends Here-->
+
+    <div id="trgFilpView" 
+         data-win-control="WinJS.UI.FlipView"
+         data-win-options="{itemDataSource:TrainersInformation.trList.dataSource,itemTemplate:DataTemplate}">
+    </div>
+
+</body>
+</html>
